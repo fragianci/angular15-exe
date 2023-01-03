@@ -59,4 +59,23 @@ export class AuthInterceptor implements HttpInterceptor {
   //   this.usersApiService.logout();
   //   return next.handle(request);
   // }
+
+
+  // Esempio di chiamate asincrone gestite con rxjs
+
+  // --Prima chiamata effettuata con pipe e catchError, finche non fa subscribe non popola this.users
+  // getUsers() {
+  //   return this.userService.getUserList().pipe(map((usersResp) => {
+  //     this.users = usersResp.users;
+  //   }), catchError((error) => {
+  //     this.toastr.danger(null, 'Qualcosa è andato storto, riprova più tardi', { preventDuplicates: true });
+  //     return error;
+  //   }));
+  // }
+
+  // --Seconda chiamata dove chiama gli incentivi, ho bisogno di avere gia users al suo interno percio prima di fare subscribe fa una pipe dove fa un switchMap() e al suo interno chiama getUsers(). Nel subscribe avro users e incentivi
+  //   this.incentiveService.getIncentiveList(this.pagination.itemsPerPage, this.pagination.page, this.fulltextString).pipe(switchMap((response: any) =>
+  //   this.getUsers().pipe(map(() => response))
+  // )).subscribe(
+  //   (res: any) => {})
 }
