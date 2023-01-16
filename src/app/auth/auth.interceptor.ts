@@ -74,8 +74,8 @@ export class AuthInterceptor implements HttpInterceptor {
   // }
 
   // --Seconda chiamata dove chiama gli incentivi, ho bisogno di avere gia users al suo interno percio prima di fare subscribe fa una pipe dove fa un switchMap() e al suo interno chiama getUsers(). Nel subscribe avro users e incentivi
-  //   this.incentiveService.getIncentiveList(this.pagination.itemsPerPage, this.pagination.page, this.fulltextString).pipe(switchMap((response: any) =>
-  //   this.getUsers().pipe(map(() => response))
-  // )).subscribe(
-  //   (res: any) => {})
+  //   this.incentiveService.getIncentiveList(this.pagination.itemsPerPage, this.pagination.page, this.fulltextString)
+  //    .pipe(switchMap((response: any) =>
+  //      this.getUsers().pipe(map(() => response))
+  //    )).subscribe((res: any) => {})
 }
